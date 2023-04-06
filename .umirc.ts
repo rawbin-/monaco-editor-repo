@@ -5,7 +5,18 @@ export default defineConfig({
     type: 'none',
   },
   routes: [
-    { path: '/', component: '@/pages/index' },
+    {
+      path: '/',
+      component: '@/pages/index',
+    },
+    {
+      path: '/EditorA',
+      component: '@/pages/EditorA',
+    },
+    {
+      path: '/EditorB',
+      component: '@/pages/EditorB',
+    },
   ],
   fastRefresh: {},
 });
