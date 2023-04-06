@@ -1,9 +1,16 @@
 import { defineConfig } from 'umi';
-
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+const { NODE_ENV } = process.env;
 export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
+  copy: [
+    {
+      from: 'node_modules/monaco-editor/min/vs/',
+      to: 'monaco-editor/min/vs/',
+    },
+  ],
   routes: [
     {
       path: '/',
@@ -19,4 +26,7 @@ export default defineConfig({
     },
   ],
   fastRefresh: {},
+  define: {
+    'process.env.NODE_ENV': NODE_ENV,
+  },
 });
